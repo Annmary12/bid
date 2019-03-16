@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          Hello Eazy Tender
-        </header>
-      </div>
-    );
-  }
-}
+// third party libraries
+import Routes from './routes';
+
+const App = () => (
+  <Routes />
+)
 
 export default App;
