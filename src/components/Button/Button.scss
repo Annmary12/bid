@@ -1,0 +1,24 @@
+@import '../../assets/scss/variables.scss';
+
+%btn-placeholder {
+  text-transform: capitalize;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: .5rem;
+  transition: all .2s;
+  position: relative;
+}
+
+.btn {
+  @extend %btn-placeholder;
+
+   &__primary {
+    background: $primary-color;
+    color: $background;
+   }
+
+   &__secondary {
+    border-color: $primary-color;
+   }
+}

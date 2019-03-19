@@ -1,0 +1,14 @@
+.signup {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__title {
+    padding: .5rem 0;
+  }
+
+  &__sub-title {
+    padding: 0 0 3rem 0;
+  }
+}

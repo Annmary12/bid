@@ -1,0 +1,15 @@
+@import './variables.scss';
+
+p {
+  font-size: 1.4rem;
+  color: transparentize($secondary-color, 0.5);
+}
+
+h2 {
+  font-size: 2.6rem;
+  color: $secondary-color;
+}
+
+.text-green {
+  color: $primary-color;
+}

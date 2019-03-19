@@ -1,0 +1,19 @@
+@import '../../assets/scss/variables.scss';
+
+.navbar {
+  padding: 3rem;
+  border-bottom: .2rem solid transparentize($secondary-color, 0.9);
+
+  &__logo {
+    font-size: 1.6rem;
+  }
+
+  .flex-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__right {
+    cursor: pointer;
+  }
+}

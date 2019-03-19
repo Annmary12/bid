@@ -1,0 +1,23 @@
+@import '../../assets/scss/variables.scss';
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  // width: 25%;
+
+  &__label {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $secondary-color;
+  }
+}
+.input {
+  padding: 1.5rem;
+  margin:  1.5rem 0;
+  border-radius: .5rem;
+  outline: none;
+
+  &:focus {
+    border: .1rem solid $primary-color;
+  }
+}
