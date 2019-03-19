@@ -9,7 +9,7 @@ import { withFormik } from 'formik';
 // components
 import AuthForm from '../../../components/AuthForm';
 
-export const signUpForm = {
+export const signUpForm  = {
   mapPropsToValues: () => ({
     firstname: '',
     lastname: '',

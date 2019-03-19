@@ -1,7 +1,8 @@
 .signup {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
+  margin-bottom: 5rem;
   transform: translate(-50%, -50%);
 
   &__title {
@@ -11,4 +12,20 @@
   &__sub-title {
     padding: 0 0 3rem 0;
   }
+
+  @media only screen and (max-width: 1024px)  {
+    top: 40%;
+    width: 50%;
+  }
+
+  @media only screen and (max-width: 600px)  {
+    top: 50%;
+    width: 80%;
+  }
+
+  @media only screen and (max-width: 360px)  {
+    top: 70%;
+    width: 80%;
+  }
+
 }
