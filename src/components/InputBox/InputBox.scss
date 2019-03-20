@@ -3,7 +3,6 @@
 .form-input {
   display: flex;
   flex-direction: column;
-  // width: 25%;
 
   &__label {
     font-size: 1.4rem;
@@ -17,16 +16,37 @@
       cursor: pointer;
     }
   }
-}
-.input {
-  padding: 1.5rem;
-  margin:  1.5rem 0;
-  border-radius: .3rem;
-  border: 1px solid transparentize($secondary-color, 0.85);
-  font-size: 1.4rem;
-  color: transparentize($secondary-color, 0.2);
 
-  &:focus {
-    border: .1rem solid $primary-color;
+  &__input {
+    margin:  1.5rem 0;
+  }
+
+  .input {
+    padding: 1.5rem;
+    border-radius: .3rem;
+    border: 1px solid transparentize($secondary-color, 0.85);
+    font-size: 1.4rem;
+    width: 100%;
+    color: transparentize($secondary-color, 0.2);
+
+    &:focus {
+      border: .1rem solid $primary-color;
+    }
+
+    &__error, &__error:focus {
+      border: 1px solid $error-color;
+    }
+
+    &__error--message {
+      color: $error-color;
+      font-size: 1.4rem;
+    }
+  }
+
+  &__bottom {
+    float: right;
+    margin: 1rem 0 2rem;
+    font-size: 1.4rem;
+    color: transparentize($secondary-color, .5);
   }
 }

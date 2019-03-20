@@ -9,11 +9,16 @@ import { withFormik } from 'formik';
 // components
 import AuthForm from '../../components/AuthForm';
 
+//utils
+import { loginSchema } from '../../utils/validation-schemas/auth';
+
 export const LoginForm  = {
   mapPropsToValues: () => ({
     email: '',
     password: ''
   }),
+
+  validationSchema: loginSchema,
 
   handleSubmit: (values, { setSubmitting }) => {
     setTimeout(() => {

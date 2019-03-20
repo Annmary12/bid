@@ -113,6 +113,8 @@ class AuthForm extends Component{
           name="password"
           label={this.isSignUp() ? 'Create Password' : 'Password'}
           rightLabel={this.isSignUp() ? 'show' : ''}
+          bottomLabel={this.isLogin() ? "Forgot Password" : ''}
+          link={this.isLogin() ? "/forgot-password" : ''}
           onClick={this.toggleShowPassword}
           { ...this.props }
         />

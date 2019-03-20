@@ -9,6 +9,9 @@ import { withFormik } from 'formik';
 // components
 import AuthForm from '../../components/AuthForm';
 
+// utils
+import { SignUpSchema } from '../../utils/validation-schemas/auth';
+
 export const signUpForm  = {
   mapPropsToValues: () => ({
     firstname: '',
@@ -16,6 +19,8 @@ export const signUpForm  = {
     email: '',
     password: ''
   }),
+
+  validationSchema: SignUpSchema,
 
   handleSubmit: (values, { setSubmitting }) => {
     setTimeout(() => {

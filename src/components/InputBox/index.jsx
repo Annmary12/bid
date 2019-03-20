@@ -1,5 +1,6 @@
 // react libraries
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 // third party libraries
 import PropTypes from 'prop-types';
@@ -17,6 +18,8 @@ const InputBox = ({
   label,
   type,
   rightLabel,
+  bottomLabel,
+  link,
   onClick,
 }) => (
   <div className="form-input">
@@ -24,19 +27,22 @@ const InputBox = ({
       {label}:
      <p className="form-input__label--right" onClick={onClick}>{rightLabel}</p>
     </label>
-    <input
-      type={type}
-      className={
-        errors[name] && touched[name] ? 'input input__error' : 'input'
+    <div className="form-input__input">
+      <input
+        type={type}
+        className={
+          errors[name] && touched[name] ? 'input input__error' : 'input'
+        }
+        name={name}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        value={values[name]}
+      />
+      { bottomLabel && <Link to={link} className="form-input__bottom">{bottomLabel}</Link>}
+      {
+        errors[name] && touched[name] && <span className="input__error--message">{errors[name]}</span>
       }
-      name={name}
-      onChange={handleChange}
-      onBlur={handleBlur}
-      value={values[name]}
-    />
-    {
-      errors[name] && touched[name] && <div className="error_message">{errors[name]}</div>
-    }
+    </div>
   </div>
 )
 
@@ -51,6 +57,8 @@ InputBox.propTypes = {
   type: PropTypes.string,
   rightLabel: PropTypes.string,
   onClick: PropTypes.func,
+  bottomLabel: PropTypes.string,
+  link: PropTypes.string,
 };
 
 InputBox.defaultProps = {

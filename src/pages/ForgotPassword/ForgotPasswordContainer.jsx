@@ -9,10 +9,15 @@ import { withFormik } from 'formik';
 // components
 import AuthForm from '../../components/AuthForm';
 
+// utils
+import { resetPasswordSchema } from '../../utils/validation-schemas/auth';
+
 export const ForgotPaswordForm  = {
   mapPropsToValues: () => ({
     email: '',
   }),
+
+  validationSchema: resetPasswordSchema,
 
   handleSubmit: (values, { setSubmitting }) => {
     setTimeout(() => {

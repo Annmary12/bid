@@ -1,5 +1,6 @@
 // react library
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 // components
 import SignUpContainer from './SignUpContainer';
@@ -13,7 +14,7 @@ const SignUp = () => (
     <p className="signup__sub-title">Sign up and start creating tenders on the fly.</p>
     <SignUpContainer />
     <footer>
-      <p>Already have a account? <span className="text-green">log In</span></p>
+      <p>Already have a account? <Link to="/login" className="text-green">log In</Link></p>
     </footer>
   </div>
 )

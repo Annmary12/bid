@@ -1,5 +1,6 @@
 // react libraries
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 // components
 import ForgotPasswordContainer from './ForgotPasswordContainer';
@@ -13,7 +14,7 @@ const Login = () => (
     <p className="forgot-password__sub-title">Please enter your email you registered your account with. We'll send a password reset link to create a new password</p>
     <ForgotPasswordContainer />
     <footer>
-      <p>Don't have an account? <span className="text-green">Create one</span></p>
+      <p>Don't have an account? <Link to="/signup" className="text-green">Create one</Link></p>
     </footer>
   </div>
 )
