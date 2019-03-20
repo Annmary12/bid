@@ -9,13 +9,22 @@
     font-size: 1.4rem;
     font-weight: 700;
     color: $secondary-color;
+
+    &--right {
+      float: right;
+      margin-right: .3rem;
+      font-weight: 400;
+      cursor: pointer;
+    }
   }
 }
 .input {
   padding: 1.5rem;
   margin:  1.5rem 0;
-  border-radius: .5rem;
-  outline: none;
+  border-radius: .3rem;
+  border: 1px solid transparentize($secondary-color, 0.85);
+  font-size: 1.4rem;
+  color: transparentize($secondary-color, 0.2);
 
   &:focus {
     border: .1rem solid $primary-color;

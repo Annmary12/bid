@@ -1,0 +1,6 @@
+@mixin centerDiv($top, $bottom) {
+  position: absolute;
+  top: $top;
+  left: $bottom;
+  transform: translate(-50%, -50%);
+}

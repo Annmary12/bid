@@ -12,13 +12,22 @@ import Button from '../Button';
 import './AuthForm.scss';
 
 class AuthForm extends Component{
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      hidden: true
+    }
+    this.toggleShowPassword = this.toggleShowPassword.bind(this);
+  }
+
   /**
    *  Gets the submit button text
    *
    * @returns {string}
    */
   SubmitButtonText = () => {
-    switch(this.props.type) {
+    switch(this.props.formType) {
       case 'signup':
         return 'Create Account';
       case 'login':
@@ -35,21 +44,30 @@ class AuthForm extends Component{
    *
    * @returns {boolean}
    */
-  isSignUp = () => this.props.type === 'signup';
+  isSignUp = () => this.props.formType === 'signup';
 
   /**
    * checks if is a login form
    *
    * @returns {boolean}
    */
-  isLogin = () => this.props.type === 'login';
+  isLogin = () => this.props.formType === 'login';
 
   /**
    * checks if is a password reset form
    *
    * @returns {boolean}
    */
-  isPasswordReset = () => (this.props.type === 'forgotPassword');
+  isPasswordReset = () => (this.props.formType === 'forgotPassword');
+
+  /**
+   * toggles the password
+   *
+   * @returns {void}
+   */
+  toggleShowPassword() {
+    this.setState({ hidden: !this.state.hidden });
+  }
 
   render() {
     const {
@@ -60,7 +78,7 @@ class AuthForm extends Component{
       handleChange,
       handleSubmit
     } = this.props;
-    return console.log(this.isPasswordReset()) || (
+    return (
       <form onSubmit={handleSubmit} className="form">
         {
           this.isSignUp()  &&
@@ -91,9 +109,11 @@ class AuthForm extends Component{
         {
           !this.isPasswordReset() &&
           <InputBox
-          type="password"
+          type={this.state.hidden ? "password" : "text"}
           name="password"
           label={this.isSignUp() ? 'Create Password' : 'Password'}
+          rightLabel={this.isSignUp() ? 'show' : ''}
+          onClick={this.toggleShowPassword}
           { ...this.props }
         />
         }
@@ -109,17 +129,17 @@ class AuthForm extends Component{
 }
 
 AuthForm.propTypes = {
-  type: PropTypes.string,
+  formType: PropTypes.string,
   values: PropTypes.objectOf(PropTypes.string),
   touched: PropTypes.objectOf(PropTypes.bool),
   errors: PropTypes.objectOf(PropTypes.string),
   isSubmitting: PropTypes.bool,
   handleChange: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired
+  handleSubmit: PropTypes.func.isRequired,
 };
 
 AuthForm.defaultProps = {
-  type: '',
+  formType: '',
   values: {},
   touched: {},
   errors: {},

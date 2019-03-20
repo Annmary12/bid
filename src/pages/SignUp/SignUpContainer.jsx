@@ -7,7 +7,7 @@ import { compose } from 'redux';
 import { withFormik } from 'formik';
 
 // components
-import AuthForm from '../../../components/AuthForm';
+import AuthForm from '../../components/AuthForm';
 
 export const signUpForm  = {
   mapPropsToValues: () => ({
@@ -27,7 +27,7 @@ export const signUpForm  = {
 
 
 const mapStateToProps = () => ({
-  type: 'signup'
+  formType: 'signup'
 });
 
 export default compose(
