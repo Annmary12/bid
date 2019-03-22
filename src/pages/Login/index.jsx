@@ -8,7 +8,7 @@ import LoginContainer from './LoginContainer';
 // style
 import './Login.scss';
 
-const Login = () => (
+const Login = () =>  (
   <div className="login">
     <h2 className="login__title">Welcome back,</h2>
     <p className="login__sub-title">Log in to manager your tenders</p>

@@ -8,6 +8,7 @@ import NavBar from './components/Navbar';
 
 // global style
 import './assets/scss/globals.scss';
+import 'font-awesome/css/font-awesome.min.css';
 
 const App = () => (
   <React.Fragment>

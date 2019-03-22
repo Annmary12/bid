@@ -3,6 +3,6 @@ import * as Cookie from 'cookies-js';
 
 export const authService = {
   getToken() {
-    return Cookie.get('jwt-token');
+    return localStorage.getItem('jwt-token');
   }
 }

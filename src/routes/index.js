@@ -9,6 +9,7 @@ import HomePage from '../pages/HomePage';
 import Login from '../pages/Login';
 import SignUp from '../pages/SignUp';
 import ForgotPassword from '../pages/ForgotPassword';
+import CompanyForm from '../pages/CompanyForm';
 
 const Routes = () => (
   <Switch>
@@ -16,6 +17,7 @@ const Routes = () => (
     <Route exact path="/signup" component={SignUp} />
     <Route path="/login" component={Login} />
     <Route path="/forgot-password" component={ForgotPassword} />
+    <Route path="/company-signup" component={CompanyForm} />
   </Switch>
 )
 

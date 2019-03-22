@@ -40,14 +40,21 @@ class AuthForm extends Component{
   }
 
   /**
-   * checks if is a signup form
+   * Displays password text
+   *
+   * @returns {string}
+   */
+  displayPasswordText = () => this.state.hidden ? 'show' : 'hide';
+
+  /**
+   * Checks if is a signup form
    *
    * @returns {boolean}
    */
   isSignUp = () => this.props.formType === 'signup';
 
   /**
-   * checks if is a login form
+   * Checks if is a login form
    *
    * @returns {boolean}
    */
@@ -78,6 +85,7 @@ class AuthForm extends Component{
       handleChange,
       handleSubmit
     } = this.props;
+
     return (
       <form onSubmit={handleSubmit} className="form">
         {
@@ -109,14 +117,14 @@ class AuthForm extends Component{
         {
           !this.isPasswordReset() &&
           <InputBox
-          type={this.state.hidden ? "password" : "text"}
-          name="password"
-          label={this.isSignUp() ? 'Create Password' : 'Password'}
-          rightLabel={this.isSignUp() ? 'show' : ''}
-          bottomLabel={this.isLogin() ? "Forgot Password" : ''}
-          link={this.isLogin() ? "/forgot-password" : ''}
-          onClick={this.toggleShowPassword}
-          { ...this.props }
+            type={this.state.hidden ? "password" : "text"}
+            name="password"
+            label={this.isSignUp() ? 'Create Password' : 'Password'}
+            rightLabel={this.isSignUp() ? this.displayPasswordText() : ''}
+            bottomLabel={this.isLogin() ? "Forgot Password" : ''}
+            link={this.isLogin() ? "/forgot-password" : ''}
+            onClick={this.toggleShowPassword}
+            { ...this.props }
         />
         }
         <Button

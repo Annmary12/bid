@@ -24,7 +24,7 @@ const InputBox = ({
 }) => (
   <div className="form-input">
     <label className="form-input__label" htmlFor={name}>
-      {label}:
+      {label}
      <p className="form-input__label--right" onClick={onClick}>{rightLabel}</p>
     </label>
     <div className="form-input__input">

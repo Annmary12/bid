@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "cookies-js": "^1.2.3",
+    "font-awesome": "^4.7.0",
     "formik": "^1.5.1",
     "jwt-decode": "^2.2.0",
     "node-sass": "^4.11.0",

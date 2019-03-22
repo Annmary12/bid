@@ -9,7 +9,7 @@ import { withFormik } from 'formik';
 // components
 import AuthForm from '../../components/AuthForm';
 
-//utils
+// utils
 import { loginSchema } from '../../utils/validation-schemas/auth';
 
 export const LoginForm  = {
@@ -20,6 +20,12 @@ export const LoginForm  = {
 
   validationSchema: loginSchema,
 
+  /**
+   * handles company form submit event
+   *
+   * @param {object} values
+   * @returns {void}
+   */
   handleSubmit: (values, { setSubmitting }) => {
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
