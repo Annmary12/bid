@@ -1,0 +1,36 @@
+@import '../../../assets/scss/variables.scss';
+
+.account {
+  &__header {
+    font-weight: 400;
+    margin: 2rem 0;
+  }
+
+  &__form {
+    margin-top: 2rem;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__field {
+    width: 45%;
+  }
+
+  &__button {
+    margin-top: 3rem;
+  }
+
+  &__vl {
+    margin: 3rem auto;
+    border: .05rem solid transparentize($secondary-color, 0.9);
+  }
+
+  &__company {
+    font-weight: 400;
+    font-size: 1.8rem;
+    padding: 4rem 0 2rem;
+  }
+}

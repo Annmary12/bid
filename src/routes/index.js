@@ -10,6 +10,7 @@ import Login from '../pages/Login';
 import SignUp from '../pages/SignUp';
 import ForgotPassword from '../pages/ForgotPassword';
 import CompanyForm from '../pages/CompanyForm';
+import Settings from '../pages/Settings';
 
 const Routes = () => (
   <Switch>
@@ -18,6 +19,7 @@ const Routes = () => (
     <Route path="/login" component={Login} />
     <Route path="/forgot-password" component={ForgotPassword} />
     <Route path="/company-signup" component={CompanyForm} />
+    <Route path="/settings" component={Settings} />
   </Switch>
 )
 

@@ -12,10 +12,9 @@ class SelectBox extends Component {
     this.state = {
       showDropdownOptions: false,
       selectOption: 'Choose One',
-      options: [],
-      values: {}
     }
   }
+
   /**
    * toggles the select dropdown
    *
@@ -68,7 +67,7 @@ class SelectBox extends Component {
             autoComplete="off"
           />
           <span className="select-box__input--icon">
-            { this.state.showDropdownOptions 
+            { this.state.showDropdownOptions
               ? <i className="fa fa-caret-up"></i>
               : <i className="fa fa-caret-down"></i>
             }

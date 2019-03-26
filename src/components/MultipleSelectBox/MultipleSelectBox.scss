@@ -1,0 +1,90 @@
+@import '../../assets/scss/variables.scss';
+
+.multiple-select-box {
+  &__more {
+    margin-left: 1rem;
+    font-size: 1.2rem
+  }
+  &__value {
+    color: $tertiary-color;
+    background: transparentize($tertiary-color, 0.8);
+    padding: .5rem;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+
+    &:first-child {
+      margin-right: .5rem;
+    }
+    &:not(:first-child) {
+      margin: .5rem;
+    }
+  }
+
+  &__label {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $secondary-color;
+
+  }
+  &__input {
+    margin:  1.5rem 0;
+    position: relative;
+    padding: 1.5rem;
+    border-radius: .3rem;
+    border: 1px solid transparentize($secondary-color, 0.85);
+    font-size: 1.4rem;
+    width: 100%;
+    color: transparentize($secondary-color, 0.2);
+    cursor: pointer;
+
+    &:focus {
+      border: .1rem solid $primary-color;
+    }
+
+    &__error, &__error:focus {
+      border: 1px solid $error-color;
+    }
+
+    &__error--message {
+      color: $error-color;
+      font-size: 1.4rem;
+    }
+
+    &--icon {
+      position: absolute;
+      right: 4%;
+
+      & > i {
+        font-size: 2rem;
+        &.fa-caret-up {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  &__options {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: .2rem;
+    z-index: 100;
+    background: $background;
+    box-shadow: .3rem .3rem .3rem .3rem rgba($secondary-color, .1);
+
+    &--title {
+      padding: 2rem 2.5rem;
+      font-size: 1rem;
+    }
+    &__item {
+      padding: 2rem 2.5rem;
+      font-size: 1.4rem;
+
+      &:hover {
+        background: transparentize($primary-color, 0.9);
+        color: $primary-color;
+      }
+    }
+  }
+}

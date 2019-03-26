@@ -11,6 +11,7 @@ import { withFormik } from 'formik'
 import InputBox from '../../components/InputBox';
 import SelectBox from '../../components/SelectBox';
 import Button from '../../components/Button';
+import MultipleSelectBox from '../../components/MultipleSelectBox';
 
 // utils
 import { companyFormSchema } from '../../utils/validation-schemas/auth';
@@ -20,7 +21,7 @@ import './CompanyForm.scss';
 
 const arrayOfState = ["abia", "umuahai", "lagos", "abuja"];
 
-const gender = ['female', 'male'];
+const services = ['Constrution', 'Procurement', 'Developemnt', 'Investment', 'Engineering', 'Oil Rigging'];
 
 export const CompanyFormConfig = {
   mapPropsToValues: () => ({
@@ -28,7 +29,7 @@ export const CompanyFormConfig = {
     location: '',
     rcNumber: '',
     website: '',
-    gender: ''
+    services: ''
   }),
 
   validationSchema: companyFormSchema,
@@ -87,6 +88,13 @@ return (
         name="website"
         label="Website"
         { ...props }
+      />
+
+      <MultipleSelectBox
+        name="services"
+        label="What services do you offer"
+        options={services}
+        {...props}
       />
 
       <Button
