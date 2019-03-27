@@ -10,12 +10,26 @@
     margin-top: 2rem;
   }
 
-  &__row {
+  &__content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
   }
 
   &__button {
+    margin-top: 3rem;
+    width: 25%;
+  }
+
+  &__item {
+    padding: 1.5rem 0;
+    font-size: 1.4rem;
+  }
+
+  &__label {
+    margin-left: 2rem;
+  }
+
+  &__email {
     margin-top: 3rem;
   }
 }
