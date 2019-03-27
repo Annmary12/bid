@@ -13,3 +13,8 @@ h2 {
 .text-green {
   color: $primary-color;
 }
+
+.vl {
+  margin: 3rem auto;
+  border: .05rem solid transparentize($secondary-color, 0.9);
+}

@@ -1,6 +1,6 @@
 @import '../../../assets/scss/variables.scss';
 
-.security {
+.notification {
   &__header {
     font-weight: 400;
     margin: 2rem 0;
@@ -13,11 +13,6 @@
   &__row {
     display: flex;
     justify-content: space-between;
-  }
-
-  &__field {
-    width: 45%;
-    position: relative;
   }
 
   &__button {

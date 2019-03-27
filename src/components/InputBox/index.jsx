@@ -16,6 +16,7 @@ const InputBox = ({
   handleBlur,
   name,
   label,
+  labelClass,
   type,
   rightLabel,
   bottomLabel,
@@ -23,7 +24,7 @@ const InputBox = ({
   onClick,
 }) => (
   <div className="form-input">
-    <label className="form-input__label" htmlFor={name}>
+    <label className={`form-input__label ${labelClass}`} htmlFor={name}>
       {label}
      <p className="form-input__label--right" onClick={onClick}>{rightLabel}</p>
     </label>
@@ -54,6 +55,7 @@ InputBox.propTypes = {
   handleBlur: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
+  labelClass: PropTypes.string,
   type: PropTypes.string,
   rightLabel: PropTypes.string,
   onClick: PropTypes.func,

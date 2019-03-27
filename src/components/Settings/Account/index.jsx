@@ -16,7 +16,7 @@ import './Account.scss';
 
 export const SettingsAccountConfig = {
   mapPropsToValues: () => ({
-    firstname: '',
+    firstname: 'Annmary',
     lastname: '',
     email: '',
     company: {
@@ -27,7 +27,7 @@ export const SettingsAccountConfig = {
   }),
 
   /**
-   * handles company form submit event
+   * updates company information
    *
    * @param {object} values
    * @returns {void}
@@ -53,7 +53,7 @@ return (
   <div className="account">
     <h1 className="account__header">Account Settings</h1>
     <p>Edit the form fields then click <b>Update Profile</b> to save changes</p>
-    <hr className="account__vl"/>
+    <hr className="vl"/>
     <form onSubmit={handleSubmit} className="account__form">
       <div className="account__row">
         <div className="account__field">
@@ -61,6 +61,7 @@ return (
             type="text"
             name="firstname"
             label="First Name"
+            labelClass="light"
             { ...props }
           />
         </div>
@@ -69,6 +70,7 @@ return (
             type="text"
             name="lastname"
             label="Last Name"
+            labelClass="light"
             { ...props }
         />
         </div>
@@ -79,8 +81,10 @@ return (
             type="email"
             name="email"
             label="Email Address"
+            labelClass="light"
             { ...props }
           />
+          <span className="account__change-email-text">Change Email Address</span>
         </div>
       </div>
 
@@ -91,6 +95,7 @@ return (
             type="text"
             name="company.name"
             label="Company Name"
+            labelClass="light"
             // value='Andela'
             { ...props }
           />
@@ -100,6 +105,7 @@ return (
             type="text"
             name="company.rcNumber"
             label="RC No."
+            labelClass="light"
             { ...props }
         />
         </div>
@@ -110,6 +116,7 @@ return (
             type="text"
             name="company.website"
             label="Company website"
+            labelClass="light"
             { ...props }
           />
         </div>

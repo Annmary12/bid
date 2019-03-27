@@ -18,7 +18,6 @@ class AuthForm extends Component{
     this.state = {
       hidden: true
     }
-    this.toggleShowPassword = this.toggleShowPassword.bind(this);
   }
 
   /**
@@ -72,9 +71,9 @@ class AuthForm extends Component{
    *
    * @returns {void}
    */
-  toggleShowPassword() {
-    this.setState({ hidden: !this.state.hidden });
-  }
+  toggleShowPassword = () => (
+    this.setState({ hidden: !this.state.hidden })
+  )
 
   render() {
     const {

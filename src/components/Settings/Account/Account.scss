@@ -1,6 +1,14 @@
 @import '../../../assets/scss/variables.scss';
 
 .account {
+  &__change-email-text {
+    color: $primary-color;
+    position: absolute;
+    top: 50%;
+    right: -35%;
+    font-size: 1.2rem;
+  }
+
   &__header {
     font-weight: 400;
     margin: 2rem 0;
@@ -17,15 +25,11 @@
 
   &__field {
     width: 45%;
+    position: relative;
   }
 
   &__button {
     margin-top: 3rem;
-  }
-
-  &__vl {
-    margin: 3rem auto;
-    border: .05rem solid transparentize($secondary-color, 0.9);
   }
 
   &__company {
