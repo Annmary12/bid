@@ -22,6 +22,9 @@ const InputBox = ({
   bottomLabel,
   link,
   onClick,
+  placeholder,
+  hasIcon,
+  iconClass
 }) => (
   <div className="form-input">
     <label className={`form-input__label ${labelClass}`} htmlFor={name}>
@@ -38,7 +41,9 @@ const InputBox = ({
         onChange={handleChange}
         onBlur={handleBlur}
         value={values[name]}
+        placeholder={placeholder}
       />
+      { hasIcon && iconClass && <span className="form-input__icon"><i class={iconClass}></i></span> }
       { bottomLabel && <Link to={link} className="form-input__bottom">{bottomLabel}</Link>}
       {
         errors[name] && touched[name] && <span className="input__error--message">{errors[name]}</span>
@@ -61,6 +66,8 @@ InputBox.propTypes = {
   onClick: PropTypes.func,
   bottomLabel: PropTypes.string,
   link: PropTypes.string,
+  placeholder: PropTypes.string,
+  iconText: PropTypes.string,
 };
 
 InputBox.defaultProps = {
@@ -68,7 +75,8 @@ InputBox.defaultProps = {
   values: {},
   touched: {},
   errors: {},
-  isSubmitting: false
+  isSubmitting: false,
+  hasIcon: false
 };
 
 export default InputBox;

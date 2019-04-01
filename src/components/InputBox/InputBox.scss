@@ -3,6 +3,13 @@
 .form-input {
   display: flex;
   flex-direction: column;
+  position: relative;
+
+  &__icon {
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
+  }
 
   .light {
    font-weight: 400;
@@ -47,6 +54,7 @@
       color: $error-color;
       font-size: 1.4rem;
     }
+
   }
 
   &__bottom {
@@ -54,5 +62,10 @@
     margin: 1rem 0 2rem;
     font-size: 1.4rem;
     color: transparentize($secondary-color, .5);
+  }
+
+  ::placeholder {
+    color: transparentize($secondary-color, 0.5);
+    font-size: 1.4rem;
   }
 }
