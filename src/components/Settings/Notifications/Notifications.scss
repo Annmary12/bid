@@ -1,6 +1,6 @@
 @import '../../../assets/scss/variables.scss';
 
-.notification {
+.settings-notification {
   &__header {
     font-weight: 400;
     margin: 2rem 0;
@@ -21,6 +21,9 @@
   }
 
   &__item {
+    display: flex;
+    justify-content: start;
+    align-items: center;
     padding: 1.5rem 0;
     font-size: 1.4rem;
   }

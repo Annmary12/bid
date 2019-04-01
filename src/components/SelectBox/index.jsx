@@ -66,7 +66,7 @@ class SelectBox extends Component {
             onChange={handleChange}
             autoComplete="off"
           />
-          <span className="select-box__input--icon">
+          <span className={errors[name] && touched[name] ? 'select-box__input--icon__error' : 'select-box__input--icon'} >
             { this.state.showDropdownOptions
               ? <i className="fa fa-caret-up"></i>
               : <i className="fa fa-caret-down"></i>

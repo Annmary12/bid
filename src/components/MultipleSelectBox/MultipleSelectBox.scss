@@ -2,7 +2,7 @@
 
 .multiple-select-box {
   &__more {
-    margin-left: 1rem;
+    margin-left: .6rem;
     font-size: 1.2rem
   }
   &__value {
@@ -30,6 +30,7 @@
     margin:  1.5rem 0;
     position: relative;
     padding: 1.5rem;
+    height: 5rem;
     border-radius: .3rem;
     border: 1px solid transparentize($secondary-color, 0.85);
     font-size: 1.4rem;
@@ -77,14 +78,18 @@
       padding: 2rem 2.5rem;
       font-size: 1rem;
     }
+
     &__item {
+      display: flex;
+      justify-content: start;
+      align-items: center;
       padding: 2rem 2.5rem;
       font-size: 1.4rem;
+    }
 
-      &:hover {
-        background: transparentize($primary-color, 0.9);
-        color: $primary-color;
-      }
+    &__label {
+      padding-left: .5rem;
+      margin-top: -.4rem;
     }
   }
 }

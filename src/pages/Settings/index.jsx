@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import Account from '../../components/Settings/Account';
 import Security from '../../components/Settings/Security';
 import Notifications from '../../components/Settings/Notifications';
+import CardNotification from '../../components/Notification';
 
 // third-party libraries
 import PropTypes  from 'prop-types';
@@ -61,6 +62,7 @@ class  Settings extends Component {
           </ul>
         </div>
         <div className="settings__content">
+          <CardNotification>Hello notify me</CardNotification>
           { showAccount && <Account /> }
           { showSecurity && <Security /> }
           { showNotification && <Notifications /> }

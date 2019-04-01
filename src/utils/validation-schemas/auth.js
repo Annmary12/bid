@@ -47,5 +47,6 @@ export const companyFormSchema = Yup.object().shape({
   name: Yup.string().required('company name required'),
   location: Yup.string().required('location required'),
   rcNumber: Yup.string().required('RC No required'),
-  website: Yup.string().required('website is required')
+  website: Yup.string().required('website is required'),
+  services: Yup.array().required('services is required')
 });

@@ -45,30 +45,35 @@ const SettingsNotifications = props => {
     handleSubmit } = props;
 
 return (
-  <div className="notification">
-    <h1 className="notification__header">Notification Settings</h1>
+  <div className="settings-notification">
+    <h1 className="settings-notification__header">Notification Settings</h1>
     <p>Select what you want to get notified on click <b>Update Settings</b> to save changes</p>
     <hr className="vl"/>
     <form onSubmit={handleSubmit} className="account__form">
       <p>Notify me when:</p>
-      <div className="notification__content">
-        <div className="notification__item">
-          <input type="checkbox" checked/>
-          <label className="notification__label">A tender advert in will soon expire</label>
+      <div className="settings-notification__content">
+        <div className="settings-notification__item">
+          <CheckBox
+            checked="true"
+            handleChange={handleChange}
+          />
+          <label className="settings-notification__label">A tender advert in will soon expire</label>
         </div>
-        <div className="notification__item">
-          <input type="checkbox" />
-          <label className="notification__label">A vendor has indicated interest in my tender advert</label>
+        <div className="settings-notification__item">
+          <CheckBox />
+          <label className="settings-notification__label">A vendor has indicated interest in my tender advert</label>
         </div>
-        <div className="notification__item">
-          <input type="checkbox"/>
-          <label className="notification__label">A vendor has submitted a bid</label>
+        <div className="settings-notification__item">
+          <CheckBox />
+          <label className="settings-notification__label">A vendor has submitted a bid</label>
         </div>
-        <div className="notification__item notification__email">
-          <input type="checkbox" checked/>
-          <label className="notification__label">Send email notifications too</label>
+        <div className="settings-notification__item settings-notification__email">
+          <CheckBox
+            checked="true"
+          />
+          <label className="settings-notification__label">Send email notifications too</label>
         </div>
-        <div className="notification__button">
+        <div className="settings-notification__button">
           <Button
             classes="btn btn__primary"
             type="submit"

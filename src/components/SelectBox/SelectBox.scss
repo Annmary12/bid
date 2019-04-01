@@ -1,5 +1,11 @@
 @import '../../assets/scss/variables.scss';
 
+%dropdown-icon-property {
+  position: absolute;
+  right: 6%;
+  font-size: 2rem;
+}
+
 .select-box {
   &__label {
     font-size: 1.4rem;
@@ -24,6 +30,7 @@
 
     &__error, &__error:focus {
       border: 1px solid $error-color;
+      position: relative;
     }
 
     &__error--message {
@@ -32,12 +39,15 @@
     }
 
     &--icon {
-      position: absolute;
+      @extend %dropdown-icon-property;
       margin-top: 3rem;
-      right: 6%;
+
+      &__error {
+        @extend %dropdown-icon-property;
+        margin-top: -5rem;
+      }
 
       & > i {
-        font-size: 2rem;
         &.fa-caret-up {
           color: $primary-color;
         }

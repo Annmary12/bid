@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 // third-party libraries
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { withFormik } from 'formik'
+import { withFormik, FieldArray } from 'formik'
 
 // components
 import InputBox from '../../components/InputBox';
@@ -21,7 +21,7 @@ import './CompanyForm.scss';
 
 const arrayOfState = ["abia", "umuahai", "lagos", "abuja"];
 
-const services = ['Constrution', 'Procurement', 'Developemnt', 'Investment', 'Engineering', 'Oil Rigging'];
+const services = ['Construction', 'Procurement', 'Developemnt', 'Investment', 'Engineering', 'Oil Rigging'];
 
 export const CompanyFormConfig = {
   mapPropsToValues: () => ({
@@ -29,7 +29,7 @@ export const CompanyFormConfig = {
     location: '',
     rcNumber: '',
     website: '',
-    services: ''
+    services: Array(services.length).fill(false),
   }),
 
   validationSchema: companyFormSchema,
@@ -40,8 +40,16 @@ export const CompanyFormConfig = {
    * @returns {void}
    */
   handleSubmit: (values, { setSubmitting, props }) => {
+    const selectedServices = values.services.map((serviceChecked, index) => {
+      return serviceChecked ? services[index] : serviceChecked;
+    }).filter(service => service);
+
+    const updatedValues = {
+      ...values,
+      services: selectedServices
+    };
     setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
+      alert(JSON.stringify(updatedValues, null, 2));
       setSubmitting(false);
     }, 500);
   }
@@ -55,6 +63,7 @@ const CompanyForm = props => {
     isSubmitting,
     handleChange,
     handleSubmit,
+    arrayHelpers,
     handleBlur } = props;
 
 return (
