@@ -7,13 +7,14 @@ import PropTypes from 'prop-types';
 // components
 import Button from '../../components/Button';
 import Input from '../../components/InputBox';
+import CardProposal from '../../components/Card/Proposal';
 
 // style
 import './Dashboard.scss';
 
 class Dashboard extends Component {
   state = {
-    isTenders: false,
+    isTenders: true,
    };
 
   render() {
@@ -77,6 +78,16 @@ class Dashboard extends Component {
             </div>
           </div>
         }
+
+      <div className="dashboard__card">
+        <CardProposal/>
+      </div>
+      <div className="dashboard__card">
+        <CardProposal/>
+      </div>
+      <div className="dashboard__card">
+        <CardProposal/>
+      </div>
       </div>
     );
   }

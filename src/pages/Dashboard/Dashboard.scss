@@ -15,8 +15,8 @@
   &__nav-item {
     display: inline-block;
     font-size: 1.4rem;
-    // padding: 2rem;
     color: transparentize($secondary-color, 0.5);
+    cursor: pointer;
 
     &:first-child {
       padding: 1rem;
@@ -99,5 +99,10 @@
     background: transparentize($secondary-color, 0.9);
     border-radius: 50%;
     margin-bottom: 2rem;
+  }
+
+  &__card {
+    width: 81%;
+    margin: 1rem 0;
   }
 }

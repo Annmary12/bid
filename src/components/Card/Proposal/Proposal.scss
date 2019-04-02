@@ -1,0 +1,83 @@
+@import '../../../assets/scss/variables.scss';
+
+.proposal {
+  position: relative;
+  padding: 0 5rem 0 3rem;
+
+  &__ellipsis {
+    cursor: pointer;
+  }
+
+  &__option {
+    position: absolute;
+    right: -1%;
+    top: 50px;
+    background: white;
+    padding: 2rem;
+    border-radius: .5rem;
+    font-size: 1.2rem;
+    box-shadow: 0 1.5rem 4rem rgba(#000000, .1);
+    width: 12rem;
+
+    > div {
+      color: transparentize($secondary-color, 0.3);
+      padding: .5rem 0;
+      cursor: pointer;
+
+      &:hover {
+        color: transparentize($secondary-color, 0.1);
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 4rem;
+    padding-top: 2rem;
+
+    &--left {
+    ul {
+      display: inline-block;
+      margin-left: 1rem;
+      list-style: disc;
+
+      li {
+        display: inline-block;
+        padding: 0 1rem;
+      }
+    }
+      font-size: 1.6rem;
+    }
+
+    &--right {
+      display: inline;
+    }
+  }
+
+  &__date {
+    color: transparentize($secondary-color, 0.3);
+  }
+
+  &__header-label {
+    margin-right: 6rem;
+  }
+
+  &__content {
+    font-size: 2rem;
+    padding-bottom: 4rem;
+    width: 70%;
+    line-height: 4rem;
+  }
+
+  &__footer {
+    padding-bottom: 3rem;
+    font-size: 1.4rem;
+    color: transparentize($secondary-color, 0.3);
+
+    &--indicator {
+      margin-right: 2rem;
+    }
+  }
+}

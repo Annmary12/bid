@@ -1,1 +1,7 @@
 @import '../../assets/scss/variables.scss';
+
+.card {
+  padding: 2rem;
+  border: .1rem solid transparentize($secondary-color, 0.8);
+  border-radius: .3rem;
+}
