@@ -92,14 +92,14 @@ class AuthForm extends Component{
           <React.Fragment>
             <InputBox
             type="text"
-            name="firstname"
+            name="firstName"
             label="First Name"
             { ...this.props }
           />
 
           <InputBox
             type="text"
-            name="lastname"
+            name="lastName"
             label="Last Name"
             { ...this.props }
           />

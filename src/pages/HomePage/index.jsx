@@ -11,16 +11,7 @@ const arrayOfState = ["abia", "umuahai", "lagos"]
 
 const HomePage = () => (
   <div>
-    <InputBox
-      name="input"
-      touched={false}
-      label="my name"
-      type="text"
-    />
-    <SelectBox
-      name="location"
-      options={arrayOfState}
-    />
+    Welcome to Easy Tender
   </div>
 )
 

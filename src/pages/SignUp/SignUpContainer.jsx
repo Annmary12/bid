@@ -12,21 +12,25 @@ import AuthForm from '../../components/AuthForm';
 // utils
 import { SignUpSchema } from '../../utils/validation-schemas/auth';
 
+// actions
+import { Signup } from '../../store/modules/auth';
+
 export const signUpForm  = {
   mapPropsToValues: () => ({
-    firstname: '',
-    lastname: '',
+    firstName: '',
+    lastName: '',
     email: '',
-    password: ''
+    password: '',
   }),
 
   validationSchema: SignUpSchema,
 
-  handleSubmit: (values, { setSubmitting }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 1000);
+  handleSubmit: (values, { setSubmitting, props }) => {
+    const { type } = props;
+    props.Signup(values, type).then(() => {
+      console.log('success');
+     //  props.router.history.push('/company-signup')
+    });
   }
 }
 
@@ -36,6 +40,6 @@ const mapStateToProps = () => ({
 });
 
 export default compose(
-  connect(mapStateToProps),
+  connect(mapStateToProps, { Signup }),
   withFormik(signUpForm)
 )(AuthForm);

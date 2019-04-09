@@ -7,7 +7,7 @@ import { authService } from '../auth';
 const token = authService.getToken();
 
 const http = axios.create({
-  baseURL: process.env.EAZY_TENDER_API,
+  baseURL: process.env.REACT_APP_EAZY_TENDER_API,
   headers: {
     Authorization: `Bearer ${token}`,
   },

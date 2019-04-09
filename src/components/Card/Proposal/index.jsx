@@ -21,6 +21,13 @@ class CardProposal extends Component{
     }
   }
 
+  componentDidUpdate() {
+    if(this.state.showDropdown) {
+      console.log('focused');
+      this.refs.optionsDropdown.focus();
+    }
+  }
+
   /**
    * Toggles dropdown
    *
@@ -68,7 +75,12 @@ class CardProposal extends Component{
               </span>
 
               { this.state.showDropdown &&
-                <div className="proposal__option" onBlur={this.hideDropdown}>
+                <div 
+                  className="proposal__option"
+                  ref="optionsDropdown"
+                  onBlur={this.hideDropdown}
+                  tabIndex={0}
+                >
                   <div>Edit</div>
                   <div>Delete</div>
                 </div>

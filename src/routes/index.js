@@ -16,7 +16,7 @@ import Dashboard from '../pages/Dashboard';
 const Routes = () => (
   <Switch>
     <Route exact path="/" component={HomePage} />
-    <Route exact path="/signup" component={SignUp} />
+    <Route exact path="/signup/:type" component={SignUp} />
     <Route path="/login" component={Login} />
     <Route path="/forgot-password" component={ForgotPassword} />
     <Route path="/company-signup" component={CompanyForm} />

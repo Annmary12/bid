@@ -40,11 +40,13 @@ class MultipleSelectBox extends Component {
    *
    * @returns {void}
    */
-  hideDropdownOptions = () => (
-    this.setState({
-      showDropdownOptions: false,
-    })
-  );
+  hideDropdownOptions = (event) => {
+    if (event && event.relatedTarget === null) {
+      this.setState({
+        showDropdownOptions: false,
+      })
+    }
+  };
 
     /**
    * handle select box onchange event
